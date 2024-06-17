@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css">
+    <title>CODEV FUEL</title>
+</head>
+<body>
+    <div class="pop-up-wrapper">
+        <div class="pop-up claim-order-page">
+            <div class="title">CLAIM THIS ORDER</div>
+            <div class="subtitle">Select a vehicle and create an order.</div>
+            <div class="buttons">
+                <div class="btn" id="claim-order-btn">CLAIM</div>
+                <div class="btn cancel-btn">CANCEL</div>
+            </div>
+        </div>
+
+        <div class="pop-up new-order-page">
+            <div class="title">CREATE NEW ORDER</div>
+            <div class="subtitle">Select a vehicle and create an order.</div>
+            <select name="vehicles-select" id="vehicles-select">
+                <option value="0">Select a vehicle</option>
+            </select>
+            <div class="buttons">
+                <div class="btn" id="create-order-btn">CREATE</div>
+                <div class="btn cancel-btn">CANCEL</div>
+            </div>
+        </div>
+
+        <div class="pop-up fire-confirm-page">
+            <div class="title">FIRE</div>
+            <div class="subtitle">Do you want to fire this employee?</div>
+            <div class="buttons">
+                <div class="btn" id="fire-employee">FIRE</div>
+                <div class="btn cancel-btn">CANCEL</div>
+            </div>
+        </div>
+
+        <div class="pop-up sell-confirm-page">
+            <div class="title">SELL YOUR STATION</div>
+            <div class="subtitle">Do you really want to sell your station?</div>
+            <div class="buttons">
+                <div class="btn" id="sell-station">SELL</div>
+                <div class="btn cancel-btn">CANCEL</div>
+            </div>
+        </div>
+
+        <div class="pop-up buy-vehicle-page">
+            <div class="title">BUY VEHICLE</div>
+            <div class="subtitle" id="vehicle-buy-text">Do you want to buy this vehicle?</div>
+            <div class="buttons">
+                <div class="btn" id="buy-vehicle">BUY</div>
+                <div class="btn cancel-btn">CANCEL</div>
+            </div>
+        </div>
+
+        <div class="pop-up sell-vehicle-page">
+            <div class="title">SELL VEHICLE</div>
+            <div class="subtitle" id="vehicle-sell-text">Do you want to buy this vehicle?</div>
+            <div class="buttons">
+                <div class="btn" id="sell-vehicle">SELL</div>
+                <div class="btn cancel-btn">CANCEL</div>
+            </div>
+        </div>
+
+        <div class="pop-up invite-employee">
+            <div class="title">HIRE EMPLOYEE</div>
+            <div class="subtitle">Enter a players id to invite them.</div>
+            <input type="number" placeholder="Server ID" id="employee-id-input">
+            <div class="buttons">
+                <div class="btn" id="invite-employee">INVITE</div>
+                <div class="btn cancel-btn">CANCEL</div>
+            </div>
+        </div>
+
+        <div class="pop-up receive-invite">
+            <div class="title">INVITED</div>
+            <div class="subtitle" id="invite-title"></div>
+            <div class="buttons">
+                <div class="btn" id="accept-invite">ACCEPT</div>
+                <div class="btn" id="reject-invite">REJECT</div>
+            </div>
+        </div>
+    </div>
+
+    <main>
+        <div class="refuel-box">
+            <div class="main-title">FUEL STATION</div>
+
+            <div class="refuel-boxes">
+                <div class="box gasoline">
+                    <div class="gas-type">FILL <span>GASOLINE</span></div>
+                    <div class="gas-amount-wrapper">
+                        <div class="reduce-btn btn">
+                            <svg width="15" height="22" viewBox="0 0 15 22" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M1.37822 12.1215L11.384 20.9068C12.5631 21.9436 14.4102 21.1009 14.4102 19.5274V1.95684C14.4105 1.60469 14.3096 1.25991 14.1197 0.963803C13.9298 0.667693 13.6589 0.4328 13.3393 0.287253C13.0198 0.141706 12.6653 0.0916749 12.3182 0.143152C11.9711 0.194629 11.6461 0.345431 11.3822 0.577499L1.38004 9.36279C1.184 9.53473 1.02687 9.74677 0.919215 9.98467C0.811558 10.2226 0.755859 10.4808 0.755859 10.7421C0.755859 11.0034 0.811558 11.2617 0.919215 11.4996C1.02687 11.7375 1.184 11.9495 1.38004 12.1215H1.37822Z" fill="#F8F8F8"/>
+                            </svg>
+                        </div>
+                        <div class="gas-amount"><input type="number" value="0"><span>LITERS</span></div>
+                        <div class="increase-btn btn">
+                            <svg width="14" height="22" viewBox="0 0 14 22" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M13.154 12.1215L3.14824 20.9068C1.96915 21.9436 0.122047 21.1009 0.122047 19.5274V1.95684C0.121746 1.60469 0.222593 1.25991 0.412512 0.963803C0.602429 0.667693 0.873368 0.4328 1.19288 0.287253C1.51239 0.141706 1.86694 0.0916749 2.21406 0.143152C2.56117 0.194629 2.88615 0.345431 3.15006 0.577499L13.1522 9.36279C13.3482 9.53473 13.5054 9.74677 13.613 9.98467C13.7207 10.2226 13.7764 10.4808 13.7764 10.7421C13.7764 11.0034 13.7207 11.2617 13.613 11.4996C13.5054 11.7375 13.3482 11.9495 13.1522 12.1215H13.154Z" fill="#F8F8F8"/>
+                            </svg>
+                        </div>
+                    </div>
+                    <div class="total-price">$0</div>
+                    <div class="pricing">Pricing per liter <span>$3.45</span></div>
+                    <div class="refuel-btn">REFUEL</div>
+                </div>
+                <div class="box diesel">
+                    <div class="gas-type">FILL <span>DIESEL</span></div>
+                    <div class="gas-amount-wrapper">
+                        <div class="reduce-btn btn">
+                            <svg width="15" height="22" viewBox="0 0 15 22" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M1.37822 12.1215L11.384 20.9068C12.5631 21.9436 14.4102 21.1009 14.4102 19.5274V1.95684C14.4105 1.60469 14.3096 1.25991 14.1197 0.963803C13.9298 0.667693 13.6589 0.4328 13.3393 0.287253C13.0198 0.141706 12.6653 0.0916749 12.3182 0.143152C11.9711 0.194629 11.6461 0.345431 11.3822 0.577499L1.38004 9.36279C1.184 9.53473 1.02687 9.74677 0.919215 9.98467C0.811558 10.2226 0.755859 10.4808 0.755859 10.7421C0.755859 11.0034 0.811558 11.2617 0.919215 11.4996C1.02687 11.7375 1.184 11.9495 1.38004 12.1215H1.37822Z" fill="#F8F8F8"/>
+                            </svg>
+                        </div>
+                        <div class="gas-amount"><input type="number" value="0"><span>LITERS</span></div>
+                        <div class="increase-btn btn">
+                            <svg width="14" height="22" viewBox="0 0 14 22" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M13.154 12.1215L3.14824 20.9068C1.96915 21.9436 0.122047 21.1009 0.122047 19.5274V1.95684C0.121746 1.60469 0.222593 1.25991 0.412512 0.963803C0.602429 0.667693 0.873368 0.4328 1.19288 0.287253C1.51239 0.141706 1.86694 0.0916749 2.21406 0.143152C2.56117 0.194629 2.88615 0.345431 3.15006 0.577499L13.1522 9.36279C13.3482 9.53473 13.5054 9.74677 13.613 9.98467C13.7207 10.2226 13.7764 10.4808 13.7764 10.7421C13.7764 11.0034 13.7207 11.2617 13.613 11.4996C13.5054 11.7375 13.3482 11.9495 13.1522 12.1215H13.154Z" fill="#F8F8F8"/>
+                            </svg>
+                        </div>
+                    </div>
+                    <div class="total-price">$0</div>
+                    <div class="pricing">Pricing per liter <span>$3.45</span></div>
+                    <div class="refuel-btn">REFUEL</div>
+                </div>
+                <div class="box electric">
+                    <div class="gas-type">FILL <span>ELECTRIC</span></div>
+                    <div class="gas-amount-wrapper">
+                        <div class="reduce-btn btn">
+                            <svg width="15" height="22" viewBox="0 0 15 22" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M1.37822 12.1215L11.384 20.9068C12.5631 21.9436 14.4102 21.1009 14.4102 19.5274V1.95684C14.4105 1.60469 14.3096 1.25991 14.1197 0.963803C13.9298 0.667693 13.6589 0.4328 13.3393 0.287253C13.0198 0.141706 12.6653 0.0916749 12.3182 0.143152C11.9711 0.194629 11.6461 0.345431 11.3822 0.577499L1.38004 9.36279C1.184 9.53473 1.02687 9.74677 0.919215 9.98467C0.811558 10.2226 0.755859 10.4808 0.755859 10.7421C0.755859 11.0034 0.811558 11.2617 0.919215 11.4996C1.02687 11.7375 1.184 11.9495 1.38004 12.1215H1.37822Z" fill="#F8F8F8"/>
+                            </svg>
+                        </div>
+                        <div class="gas-amount"><input type="number" value="0"><span>KW</span></div>
+                        <div class="increase-btn btn">
+                            <svg width="14" height="22" viewBox="0 0 14 22" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M13.154 12.1215L3.14824 20.9068C1.96915 21.9436 0.122047 21.1009 0.122047 19.5274V1.95684C0.121746 1.60469 0.222593 1.25991 0.412512 0.963803C0.602429 0.667693 0.873368 0.4328 1.19288 0.287253C1.51239 0.141706 1.86694 0.0916749 2.21406 0.143152C2.56117 0.194629 2.88615 0.345431 3.15006 0.577499L13.1522 9.36279C13.3482 9.53473 13.5054 9.74677 13.613 9.98467C13.7207 10.2226 13.7764 10.4808 13.7764 10.7421C13.7764 11.0034 13.7207 11.2617 13.613 11.4996C13.5054 11.7375 13.3482 11.9495 13.1522 12.1215H13.154Z" fill="#F8F8F8"/>
+                            </svg>
+                        </div>
+                    </div>
+                    <div class="total-price">$0</div>
+                    <div class="pricing">Pricing per kW <span>$3.45</span></div>
+                    <div class="refuel-btn">CHARGE</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="staff-menu-wrapper">
+            <div class="header">
+                <div class="nav-bar">
+                    <div class="nav-item active" data-href="overview">Overview</div>
+                    <div class="nav-item" data-href="orders">Orders</div>
+                    <div class="nav-item" data-href="employees">Employees</div>
+                </div>
+                <div class="right">
+                    <input type="text" class="search-bar" placeholder="Search by name.">
+                    <div class="btn hire-btn">HIRE EMPLOYEE</div>
+                    <div class="btn order-btn">NEW ORDER</div>
+                    <div class="btn sell-btn">SELL STATION</div>
+                </div>
+            </div>
+
+            <div class="pages-wrapper">
+                <div class="page overview" data-page="overview">
+                    <div class="left">
+                        <div class="box" id="station-balance-box">
+                            <div class="text-box">
+                                <div class="title big">STATION BALANCE</div>
+                                <div class="subtitle">Your balance is <span id="station-balance">1000$</span></div>
+                            </div>
+                            <input type="number" placeholder="$0.00" id="balance-input">
+                            <div class="btn-wrapper">
+                                <div class="btn" id="deposit-btn">Deposit</div>
+                                <div class="btn" id="withdraw-btn">Withdraw</div>
+                            </div>
+                        </div>
+                        <div class="box" id="total-capacity-box">
+                            <div class="left-box">
+                                <div class="total-capacity-wrapper text-box">
+                                    <div class="title big">Total Capacity</div>
+                                    <div class="subtitle">Your stations total capacity is <span id="max-capacity">10000L</span></div>
+                                </div>
+                                <div class="divider"></div>
+                                <div class="price-per-liter text-box">
+                                    <div class="title big">Price Per Liter</div>
+                                    <div class="input-wrap">
+                                        <input type="number" placeholder="$0.00" id="liter-price-input">
+                                        <div class="btn" id="save-btn">SAVE</div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="fuel-box-wrapper">
+                                <div class="fuel-box">
+                                    <svg id="fuel-bar-svg" width="60" height="150" viewBox="0 0 60 150" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path opacity="0.3" d="M0 145V10.4246C0 7.93375 1.89959 6.08602 4.15271 7.14802C9.85951 9.83791 18.153 16.1632 26.5385 10.8407C35.1923 5.34784 39.8077 -5.63869 51.9231 3.51659C54.1187 5.17573 56.8848 7.78494 58.5441 9.39999C59.4852 10.316 60 11.5769 60 12.8903V145C60 147.761 57.7614 150 55 150H5C2.23858 150 0 147.761 0 145Z" fill="white"/>
+                                        <path opacity="0.3" d="M0 145V15.6765C0 11.0031 8.48552 4.26606 12.99 3.02121C17.5207 1.76913 22.1397 0.000116042 25.3846 0C31.7308 -0.000226946 35.2682 10.0998 43.8462 6.08118C51.8373 2.33748 54.417 3.77926 58.3995 8.81042C59.0726 9.66081 59.4255 10.7217 59.43 11.8063L59.9793 144.979C59.9907 147.749 57.7488 150 54.9793 150H5C2.23858 150 0 147.761 0 145Z" fill="white"/>
+                                        <path d="M0 144.927V10.8246C0 9.79454 0.302453 8.76863 0.971237 7.98518C6.72569 1.24412 13.0289 5.87935 15.5769 9.24171C19.6154 13.5049 29.6538 19.4734 37.5 9.24171C44.5227 0.0838404 53.6099 3.9042 58.4735 7.86383C59.4968 8.69688 60 9.98214 60 11.3016V144.927C60 147.688 57.7614 149.927 55 149.927H5C2.23858 149.927 0 147.688 0 144.927Z" fill="white"/>
+                                    </svg>
+                                    <div class="capacity-text"><span id="station-fuel-amount"></span></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="right">
+                        <div class="box" id="vehicles-box">
+                            <div class="text-box">
+                                <div class="title big">VEHICLES</div>
+                                <div class="subtitle">Rent a car and start a mission to refuel your stations fuel.</div>
+                            </div>
+                            <div class="vehicle-wrapper"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="page orders" data-page="orders">
+                    <div class="table">
+                        <div class="table-head">
+                            <div class="tr">
+                                <div class="td">ID</div>
+                                <div class="td">Vehicle</div>
+                                <div class="td">Employee</div>
+                                <div class="td">ACTION</div>
+                            </div>
+                        </div>
+                        <div class="table-body" id="orders-table">
+                            <div class="tr">
+                                <div class="td">TEST</div>
+                                <div class="td">TEST</div>
+                                <div class="td"><div class="btn">ACCEPT</div></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="page employees" data-page="employees">
+                    <div class="table">
+                        <div class="table-head">
+                            <div class="tr">
+                                <div class="td">NAME</div>
+                                <div class="td">GRADE</div>
+                                <div class="td">TOTAL ORDERS</div>
+                                <div class="td">ACTION</div>
+                            </div>
+                        </div>
+                        <div class="table-body" id="employees-table">
+                            <div class="tr">
+                                <div class="td">TEST</div>
+                                <div class="td">TEST</div>
+                                <div class="td">0</div>
+                                <div class="td"><div class="btn">FIRE</div></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>
